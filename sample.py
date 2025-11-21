@@ -81,4 +81,11 @@ crop_to_check = st.selectbox("🌿 Select the crop you want to check for disease
 if st.button("🔬 Check Disease"):
     if crop_to_check:
         predicted_disease, precautions = predict_disease(crop_to_check)
-        st.subhead…
+        st.subheader("🦠 Predicted Disease:")
+        st.write(predicted_disease)
+        st.subheader("🛑 Precautions:")
+        st.write(", ".join(precautions))
+    else:
+        st.warning("⚠️ Please select a crop.")
+
+st.write("🌾 This application provides **crop recommendations** based on soil type and predicts **possible diseases** for crops.")
